@@ -4,6 +4,9 @@ import 'package:goaluin_flutter_assignment/core/constants/app_theme.dart';
 import 'package:goaluin_flutter_assignment/views/first_page.dart';
 import 'package:goaluin_flutter_assignment/views/home_page.dart';
 import 'package:goaluin_flutter_assignment/widgets/costum_buttons.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+// import google font package
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -22,7 +25,7 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
-                      margin: const EdgeInsets.only(top: 50, left: 20),
+                      margin: const EdgeInsets.only(top: 30, left: 20),
                       child: IconButton(
                         onPressed: () {
                           Get.to(() => const FirstPage());
@@ -38,37 +41,40 @@ class LoginPage extends StatelessWidget {
               ),
               // container for the svg image
               Container(
+                alignment: Alignment.topLeft,
                 margin: const EdgeInsets.only(top: 50),
-                // child: Image.asset(
-                //   'assets/images/login_image.png',
-                //   width: 300,
-                //   height: 300,
-                // ),
+                child: SvgPicture.asset(
+                  'assets/images/login_image.svg',
+                  // width: 160,
+                  height: 180,
+                ),
               ),
               // container for the welcome text
               Align(
+                alignment: Alignment.centerRight,
                 child: Container(
-                  margin: const EdgeInsets.only(top: 50, right: 100),
-                  child: const Text(
+                  margin: const EdgeInsets.only(top: 30, right: 100),
+                  child: Text(
                     'Welcome \nBack!',
-                    style: TextStyle(
+                    style: GoogleFonts.montserrat(
                       fontSize: 50,
                       fontWeight: FontWeight.bold,
-                      color: Colors.grey,
+                      color: AppTheme.loginText,
                     ),
                   ),
                 ),
               ),
               // container for email and password textfield
               Container(
-                margin: const EdgeInsets.all(40),
+                margin: const EdgeInsets.all(20),
                 child: Column(
                   children: [
                     Container(
                       child: TextField(
                         decoration: InputDecoration(
                           labelText: 'Email',
-                          labelStyle: TextStyle(
+                          labelStyle: GoogleFonts.montserrat(
+                            fontSize: 20,
                             color: AppTheme.inputTextColor,
                           ),
                           suffixIcon: Icon(
@@ -96,7 +102,8 @@ class LoginPage extends StatelessWidget {
                         keyboardType: TextInputType.visiblePassword,
                         decoration: InputDecoration(
                           labelText: 'Password',
-                          labelStyle: TextStyle(
+                          labelStyle: GoogleFonts.montserrat(
+                            fontSize: 20,
                             color: AppTheme.inputTextColor,
                           ),
                           suffixIcon: Icon(

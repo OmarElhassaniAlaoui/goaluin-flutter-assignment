@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:goaluin_flutter_assignment/core/constants/app_theme.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   final String text;
@@ -15,7 +16,10 @@ class CustomElevatedButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           text,
-          style: TextStyle(color: Colors.white, fontSize: 20),
+          style: GoogleFonts.montserrat(
+            fontSize: 20,
+            color: Colors.white,
+          ),
         ),
         style: TextButton.styleFrom(
           backgroundColor: AppTheme.buttonColor,
@@ -23,7 +27,6 @@ class CustomElevatedButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5),
           ),
-          // disabledBackgroundColor: Color();
         ),
       ),
     );

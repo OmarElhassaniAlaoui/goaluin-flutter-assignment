@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:goaluin_flutter_assignment/core/constants/app_theme.dart';
 import 'package:goaluin_flutter_assignment/views/auth/login_page.dart';
 import 'package:goaluin_flutter_assignment/widgets/costum_buttons.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -17,25 +19,29 @@ class HomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 'WELCOME',
-                style: TextStyle(
+                style: GoogleFonts.montserrat(
                   fontSize: 50,
                   fontWeight: FontWeight.bold,
-                  color: Colors.grey,
-                  
+                  color: AppTheme.textHome,
                 ),
               ),
               const SizedBox(
                 height: 30,
               ),
-              const Text(
-                'TO THE TEST APP',
-                style: TextStyle(
-                  fontSize: 15,
+              Text(
+                'To Test App',
+                style: GoogleFonts.montserrat(
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.blue,
+                  color: AppTheme.buttonColor,
                 ),
+                // TextStyle(
+                //   fontSize: 15,
+                //   fontWeight: FontWeight.bold,
+                //   color: Colors.blue,
+                // ),
               ),
               const SizedBox(
                 height: 30,
