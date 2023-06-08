@@ -4,6 +4,7 @@ import 'package:goaluin_flutter_assignment/core/constants/app_theme.dart';
 import 'package:goaluin_flutter_assignment/views/auth/login_page.dart';
 import 'package:goaluin_flutter_assignment/widgets/costum_buttons.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -37,18 +38,17 @@ class HomePage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: AppTheme.buttonColor,
                 ),
-                // TextStyle(
-                //   fontSize: 15,
-                //   fontWeight: FontWeight.bold,
-                //   color: Colors.blue,
-                // ),
+                
               ),
               const SizedBox(
                 height: 30,
               ),
               CustomElevatedButton(
-                text: "SignOut",
-                onPressed: () {
+                text: "SignOut",  
+                onPressed: () async {
+                  SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                  await prefs.clear();
                   Get.to(() => const LoginPage());
                 },
               ),
