@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
                 height: 30,
               ),
               CustomElevatedButton(
-                text: "Sign Out",
+                text: "SignOut",
                 onPressed: () {
                   Get.to(() => const LoginPage());
                 },
