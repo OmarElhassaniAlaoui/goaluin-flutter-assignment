@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:goaluin_flutter_assignment/core/services/services.dart';
+import 'routs.dart';
 import 'views/home_page.dart';
 
-void main()async{ 
+void main() async {
   // ensure that all services are initialized before running the app
   WidgetsFlutterBinding.ensureInitialized();
   // initial services
@@ -19,11 +20,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      title: 'goaluin Flutter Assignment',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      getPages: routs,
     );
   }
 }
